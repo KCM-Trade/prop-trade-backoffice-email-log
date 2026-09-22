@@ -24,7 +24,7 @@ class FilamentEmailLogger
      */
     public function handle(object $event): void
     {
-        if (($event->data['mailData']['skip_filament_log'] ?? false) === true) {
+        if ((($event->data['mailData'] ?? [])['skip_filament_log'] ?? false) === true) {
             return;
         }
 
